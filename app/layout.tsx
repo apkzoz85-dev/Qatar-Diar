@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-/* ⚠️ غيّر الدومين هنا لدومينك الفعلي بعد الشراء — وفي robots.ts و sitemap.ts */
 const SITE_URL = "https://alamelroum-qataridiar.com";
 
 export const metadata: Metadata = {
@@ -14,7 +13,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
-  <meta name="google-site-verification" content="ULkuo_ZDBVIBGAkH9XJ4SM5PBq14QFcLbc-d7EuHulI" />
+  verification: {
+    google: "ULkuo_ZDBVIBGAkH9XJ4SM5PBq14QFcLbc-d7EuHulI",
+  },
   robots: {
     index: true,
     follow: true,
