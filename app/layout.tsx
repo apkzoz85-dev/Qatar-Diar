@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 /* ⚠️ غيّر الدومين هنا لدومينك الفعلي بعد الشراء — وفي robots.ts و sitemap.ts */
-const SITE_URL = "https://www.YOUR-DOMAIN.com";
+const SITE_URL = "https://alamelroum-qataridiar.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
