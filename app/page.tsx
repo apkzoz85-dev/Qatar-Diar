@@ -3,13 +3,13 @@
 import { useState, useEffect, useRef } from "react";
 
 /* ─── CONFIG ─── */
-const PHONE = "01009260259";
-const PHONE_DISPLAY = "0100 926 0259";
-const PHONE_INTL = "+201009260259";
-const WA_NUMBER = "201009260259";
+const PHONE = "01117322733";
+const PHONE_DISPLAY = "01117322733";
+const PHONE_INTL = "+201117322733";
+const WA_NUMBER = "201117322733";
 const WA_MSG = "مرحباً، أرغب في التسجيل المبكر لمشروع علم الروم - الديار القطرية";
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MSG)}`;
-const WEB3_KEY = "7955729f-84bd-426b-b872-18613fe46c8f";
+const WEB3_KEY = "1fe5acc9-1e6d-4481-9677-0b9ba8bf8e6e";
 
 /* ─── TRACKING ───
    TODO بعد إنشاء الكامبين: أضف الـ conversion labels الحقيقية
