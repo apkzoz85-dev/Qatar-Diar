@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  <meta name="google-site-verification" content="ULkuo_ZDBVIBGAkH9XJ4SM5PBq14QFcLbc-d7EuHulI" />
   robots: {
     index: true,
     follow: true,
