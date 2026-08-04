@@ -33,7 +33,8 @@ function trackCall() {
 
 const NAV_LINKS = [
   { label: "عن المشروع", href: "#facts" },
-  { label: "المنطقة وتاريخها", href: "#history" },
+  { label: "الماستر بلان", href: "#masterplan" },
+  { label: "الوحدات والأسعار", href: "#units" },
   { label: "المطور", href: "#developer" },
   { label: "مقارنة برأس الحكمة", href: "#compare" },
   { label: "الموقع", href: "#location" },
@@ -41,10 +42,55 @@ const NAV_LINKS = [
   { label: "سجّل اهتمامك", href: "#register" },
 ];
 
+const MASTERPLAN_ITEMS = [
+  { n: "01", label: "ملعب جولف 18 حفرة" },
+  { n: "02", label: "مراكز مدينة نابضة بالحياة" },
+  { n: "03", label: "لاجون مفتوح على البحر وبرومناد" },
+  { n: "04", label: "البوليفارد التجاري" },
+  { n: "05", label: "مارينا دولية ومحلية" },
+  { n: "06", label: "شاطئ وممشى بطول 7 كم" },
+  { n: "07", label: "لاجونات صالحة للسباحة" },
+  { n: "08", label: "المنطقة الحرة (Free Zone)" },
+  { n: "09", label: "نادي البولو والفروسية" },
+  { n: "10", label: "مركز الفعاليات" },
+  { n: "11", label: "مركز المعارض والمؤتمرات" },
+];
+
+const UNITS = [
+  {
+    img: "/images/lagoon.jpg",
+    title: "شاليهات وشقق اللاجون",
+    desc: "وحدات مطلة على لاجونات صالحة للسباحة داخل مجتمعات سكنية هادئة.",
+    price: "تبدأ من 15,000,000 جنيه",
+    indicative: true,
+  },
+  {
+    img: "/images/beachfront.jpg",
+    title: "وحدات البيتش فرونت",
+    desc: "على الشريط الشاطئي مباشرة بطول 7.2 كم على البحر المتوسط.",
+    price: "سجّل ليصلك سعر هذه الفئة أولاً",
+    indicative: false,
+  },
+  {
+    img: "/images/marina.jpg",
+    title: "وحدات المارينا",
+    desc: "قلب المدينة الاجتماعي — مارينا دولية 370 مرسى بمطاعم وريتيل وبرومناد.",
+    price: "سجّل ليصلك سعر هذه الفئة أولاً",
+    indicative: false,
+  },
+  {
+    img: "/images/golf.jpg",
+    title: "فلل وتاون الجولف",
+    desc: "إطلالات مفتوحة على ملعب جولف 18 حفرة بمساحة 980 ألف م².",
+    price: "سجّل ليصلك سعر هذه الفئة أولاً",
+    indicative: false,
+  },
+];
+
 const FAQS = [
   { q: "أين يقع مشروع علم الروم بالظبط؟", a: "تقع منطقة علم الروم شرق مدينة مرسى مطروح مباشرة على ساحل البحر المتوسط، وسُميت بهذا الاسم نسبة إلى حصن روماني قديم كان قائماً في المنطقة." },
   { q: "من هي الشركة المطورة لمشروع علم الروم؟", a: "المطور هو شركة الديار القطرية، الذراع العقارية لجهاز قطر للاستثمار (الصندوق السيادي القطري)، ولها مشروعات كبرى في أكثر من 20 دولة حول العالم." },
-  { q: "هل تم الإعلان عن أسعار الوحدات في علم الروم؟", a: "لا، حتى الآن لم يتم الإعلان رسمياً عن أسعار الوحدات أو أنظمة السداد. المشروع في مرحلة ما قبل الإطلاق، ويمكنك تسجيل اهتمامك لتصلك الأسعار الرسمية فور صدورها." },
+  { q: "كم أسعار الوحدات في علم الروم؟", a: "الأسعار الاسترشادية المتداولة قبل الإطلاق تبدأ من نحو 15 مليون جنيه، بينما لم تصدر بعد قوائم الأسعار النهائية وأنظمة السداد الرسمية من المطور. سجّل اهتمامك لتصلك القوائم الرسمية فور صدورها." },
   { q: "متى تبدأ المرحلة الأولى من المشروع؟", a: "أعلنت الديار القطرية أن أعمال المرحلة الأولى من مشروع علم الروم تبدأ خلال عام 2026، على أن يتم تطوير المشروع على مراحل متتالية." },
   { q: "ما حجم الاستثمارات ومساحة المشروع؟", a: "تبلغ الاستثمارات المعلنة نحو 29.7 مليار دولار على مساحة حوالي 5000 فدان، لتطوير مدينة ساحلية متكاملة تشمل مكونات سكنية وفندقية وسياحية وخدمية." },
   { q: "ما الفرق بين علم الروم ورأس الحكمة؟", a: "كلاهما مشروع مدينة ساحلية متكاملة باستثمارات خليجية ضخمة على الساحل الشمالي الغربي، لكن رأس الحكمة في مرحلة أسبق من البيع والتنفيذ، بينما علم الروم في مرحلة ما قبل الإطلاق - مما قد يمنح المسجّلين مبكراً أفضلية في الأسعار الافتتاحية." },
@@ -186,19 +232,21 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero" id="hero">
+        <div className="hero-bg" aria-hidden="true" />
         <div className="chart-lines" aria-hidden="true" />
         <div style={{ position: "relative", zIndex: 2, maxWidth: 860 }}>
           <p className="hero-coords">31°22′N · 27°24′E — EAST OF MARSA MATRUH</p>
           <h1 className="hero-title">علم الروم — <em>المدينة القادمة</em> على المتوسط</h1>
           <p className="hero-sub">
             مشروع علم الروم من الديار القطرية شرق مرسى مطروح: مدينة ساحلية متكاملة على 5000 فدان
-            باستثمارات 29.7 مليار دولار — قبل أن تُعلَن الأسعار، احجز مكانك في قائمة التسجيل المبكر.
+            باستثمارات 29.7 مليار دولار — سجّل مبكراً واحجز مكانك قبل فتح باب الحجز الرسمي.
           </p>
           <div className="hero-status">
             <span className="gold">المرحلة الأولى · 2026</span>
-            <span>الأسعار لم تُعلن رسمياً بعد</span>
+            <span className="gold">الأسعار تبدأ من 15 مليون جنيه*</span>
             <span>التسجيل المبكر متاح الآن</span>
           </div>
+          <p className="hero-indicative">* أسعار استرشادية متداولة لحين الإعلان الرسمي من المطور</p>
           <div className="hero-ctas">
             <a className="btn-gold" href="#register">سجّل اهتمامك مجاناً</a>
             <a className="btn-line" href={WA_URL} target="_blank" rel="noopener" onClick={trackWhatsApp}>اسأل على واتساب</a>
@@ -228,13 +276,12 @@ export default function Home() {
               </ul>
             </div>
             <div className="facts-col pending">
-              <h3>◌ لم يُعلن بعد</h3>
+              <h3>◌ لم يُعلن رسمياً بعد</h3>
               <ul>
-                <li>أسعار الوحدات وأنظمة السداد</li>
-                <li>أنواع الوحدات ومساحاتها التفصيلية</li>
+                <li>قوائم الأسعار النهائية وأنظمة السداد التفصيلية (المتداول: تبدأ من 15 مليون جنيه استرشادياً)</li>
+                <li>مساحات الوحدات التفصيلية لكل فئة</li>
                 <li>أسماء العلامات الفندقية المشغّلة</li>
                 <li>موعد فتح باب الحجز الرسمي</li>
-                <li>تفاصيل الماستر بلان النهائي</li>
               </ul>
             </div>
             <div className="facts-note">
@@ -245,8 +292,10 @@ export default function Home() {
           <div className="stats animate-in">
             <div className="stat"><b>5000</b><small>فدان — مساحة المشروع</small></div>
             <div className="stat"><b>$29.7B</b><small>استثمارات معلنة</small></div>
+            <div className="stat"><b>7.2 كم</b><small>شاطئ على المتوسط</small></div>
+            <div className="stat"><b>22 كم</b><small>لاجون مفتوح على البحر</small></div>
+            <div className="stat"><b>370</b><small>مرسى — مارينا دولية</small></div>
             <div className="stat"><b>2026</b><small>بدء المرحلة الأولى</small></div>
-            <div className="stat"><b>شرق مطروح</b><small>على المتوسط مباشرة</small></div>
           </div>
         </div>
       </section>
@@ -282,6 +331,69 @@ export default function Home() {
               <p>بدء أعمال التطوير الفعلية لتحويل علم الروم إلى وجهة ساحلية عالمية تعمل على مدار العام.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* MASTERPLAN */}
+      <section className="section" id="masterplan" style={{ background: "var(--white)" }}>
+        <div className="section-inner">
+          <div className="animate-in">
+            <span className="eyebrow">A CITY SHAPED BY WATER</span>
+            <h2 className="section-title">الماستر بلان — مدينة تشكّلها المياه</h2>
+            <p className="section-desc">
+              يمتد المخطط العام من البحر المتوسط إلى الداخل: أحياء سكنية، وجهات فندقية،
+              مراكز تجارية ومساحات عامة — كلها متصلة بشبكة موحدة من اللاجونات والممرات والحركة الذكية.
+            </p>
+          </div>
+          <div className="mp-wrap animate-in">
+            <img src="/images/masterplan.jpg" alt="الماستر بلان لمشروع علم الروم بأرقام المكونات الرئيسية" loading="lazy" />
+          </div>
+          <div className="mp-legend animate-in">
+            {MASTERPLAN_ITEMS.map((m) => (
+              <div key={m.n} className="mp-item"><b>{m.n}</b><span>{m.label}</span></div>
+            ))}
+          </div>
+          <div className="mp-gallery animate-in">
+            <figure><img src="/images/marina-tower.jpg" alt="واجهة المارينا والبرج الأيقوني في علم الروم" loading="lazy" /><figcaption>المارينا — القلب الاجتماعي للمدينة</figcaption></figure>
+            <figure><img src="/images/boulevard.jpg" alt="البوليفارد التجاري والتنقل الذكي داخل علم الروم" loading="lazy" /><figcaption>البوليفارد التجاري والتنقل الذكي</figcaption></figure>
+            <figure><img src="/images/town.jpg" alt="مراكز المدينة والساحات العامة في علم الروم" loading="lazy" /><figcaption>مراكز المدينة والساحات العامة</figcaption></figure>
+            <figure><img src="/images/events.jpg" alt="مركز الفعاليات الأيقوني في علم الروم" loading="lazy" /><figcaption>مركز الفعاليات الأيقوني</figcaption></figure>
+            <figure><img src="/images/expo.jpg" alt="مركز المعارض والمؤتمرات الدولي في علم الروم" loading="lazy" /><figcaption>مركز المعارض والمؤتمرات</figcaption></figure>
+            <figure><img src="/images/polo.jpg" alt="نادي البولو والفروسية في علم الروم" loading="lazy" /><figcaption>نادي البولو والفروسية</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      {/* UNITS & PRICES */}
+      <section className="section" id="units">
+        <div className="section-inner">
+          <div className="animate-in center">
+            <span className="eyebrow">الوحدات والأسعار</span>
+            <h2 className="section-title">الأسعار تبدأ من 15 مليون جنيه</h2>
+            <p className="section-desc" style={{ margin: "0 auto" }}>
+              أسعار استرشادية متداولة قبل الإطلاق الرسمي — أنظمة السداد والقوائم النهائية
+              تصلك أولاً بأول عند تسجيل اهتمامك.
+            </p>
+          </div>
+          <div className="units-grid animate-in">
+            {UNITS.map((u) => (
+              <div key={u.title} className="unit-card">
+                <div className="unit-img"><img src={u.img} alt={`${u.title} في مشروع علم الروم`} loading="lazy" /></div>
+                <div className="unit-body">
+                  <h3>{u.title}</h3>
+                  <p>{u.desc}</p>
+                  <div className={`unit-price ${u.indicative ? "main" : ""}`}>{u.price}{u.indicative && <small> (استرشادي)</small>}</div>
+                  <div className="unit-ctas">
+                    <a className="unit-btn gold" href="#register">اطلب سعر هذه الفئة</a>
+                    <a className="unit-btn wa" href={WA_URL} target="_blank" rel="noopener" onClick={trackWhatsApp}>واتساب</a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="section-desc animate-in" style={{ marginTop: 18, fontSize: 13.5, color: "var(--muted)" }}>
+            * جميع الأسعار الواردة استرشادية وقابلة للتغيير، والمرجع النهائي هو قوائم الأسعار الرسمية للمطور عند الإطلاق.
+          </p>
         </div>
       </section>
 
@@ -365,6 +477,9 @@ export default function Home() {
               وقرب مباشر من مدينة قائمة بخدماتها ومطارها.
             </p>
           </div>
+          <div className="loc-img animate-in">
+            <img src="/images/location-map.jpg" alt="خريطة موقع علم الروم شرق مرسى مطروح على البحر المتوسط وأزمنة الوصول" loading="lazy" />
+          </div>
           <div className="map-wrap animate-in">
             <iframe
               title="خريطة موقع علم الروم شرق مرسى مطروح"
@@ -443,8 +558,8 @@ export default function Home() {
           <p>
             <b>إفصاح:</b> هذه منصة تسويق ومعلومات عقارية مستقلة، ولسنا الموقع الرسمي لشركة الديار القطرية
             ولا نمثلها. جميع المعلومات الواردة مجمّعة من تصريحات وأخبار منشورة علناً، وقابلة للتغيير وفق
-            الإعلانات الرسمية للمطور. لم يتم الإعلان عن أسعار رسمية حتى الآن، وأي أرقام مستقبلية ستكون
-            استرشادية لحين تأكيدها من المطور.
+            الإعلانات الرسمية للمطور. جميع الأسعار الواردة بالصفحة أسعار استرشادية متداولة قبل الإطلاق،
+            والمرجع النهائي هو قوائم الأسعار الرسمية للمطور عند صدورها.
           </p>
         </div>
       </section>
@@ -481,8 +596,9 @@ export default function Home() {
         <div className="popup-overlay" onClick={(e) => e.target === e.currentTarget && closePopup()}>
           <div className="popup" role="dialog" aria-label="التسجيل المبكر">
             <button className="popup-close" aria-label="إغلاق" onClick={closePopup}>×</button>
-            <h2>الأسعار هتتعلن قريباً — اعرفها الأول</h2>
-            <p className="form-note">سجّل قبل فتح باب الحجز الرسمي وخد أفضلية التواصل المبكر</p>
+            <div className="popup-price">الأسعار تبدأ من <b>15,000,000 جنيه</b></div>
+            <h2>سجّل قبل فتح باب الحجز الرسمي</h2>
+            <p className="form-note">سعر استرشادي قبل الإطلاق — سجّل وخد أفضلية التواصل المبكر بأنظمة السداد فور صدورها</p>
             <form
               ref={popupFormRef}
               onSubmit={(e) => { e.preventDefault(); submitForm(popupFormRef, setPopupStatus, "البوب أب"); }}
