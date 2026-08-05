@@ -156,10 +156,15 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
-        {/* ─── TODO: Google Ads / Analytics ───
-            بعد إنشاء الكامبين، أضف هنا سكريبت gtag.js بتاع حساب AW-XXXXXXXXXX
-            <Script src="https://www.googletagmanager.com/gtag/js?id=AW-18355644870" />
-        */}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18355644870"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18355644870');
+</script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
