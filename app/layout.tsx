@@ -158,7 +158,7 @@ export default function RootLayout({
         />
         {/* ─── TODO: Google Ads / Analytics ───
             بعد إنشاء الكامبين، أضف هنا سكريبت gtag.js بتاع حساب AW-XXXXXXXXXX
-            <Script src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX" />
+            <Script src="https://www.googletagmanager.com/gtag/js?id=AW-18355644870" />
         */}
         <script
           type="application/ld+json"
