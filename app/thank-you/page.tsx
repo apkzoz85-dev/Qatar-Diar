@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const PHONE_INTL = "+201009260259";
-const PHONE_DISPLAY = "0100 926 0259";
-const WA_NUMBER = "201009260259";
+const PHONE_INTL = "+201117322733";
+const PHONE_DISPLAY = "01117322733";
+const WA_NUMBER = "201117322733";
 const WA_MSG = "مرحباً، سجّلت للتو في قائمة علم الروم وأرغب في مزيد من التفاصيل";
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MSG)}`;
 
