@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const SITE_URL = "https://alamelroum-qataridiar.com";
+
+/* ─── Google Ads ─── */
+export const GADS_ID = "AW-18355644870";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -156,15 +160,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
           rel="stylesheet"
         />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18355644870"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18355644870');
-</script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -178,7 +173,24 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(agentJsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+
+        {/* ─── Google tag (gtag.js) — Google Ads ─── */}
+        <Script
+          id="gtag-src"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GADS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GADS_ID}');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
