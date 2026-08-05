@@ -12,7 +12,7 @@ const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MSG)}`;
 const WEB3_KEY = "1fe5acc9-1e6d-4481-9677-0b9ba8bf8e6e";
 
 /* ─── GOOGLE ADS TRACKING ─── */
-const GADS_ID = "AW-18355644870";
+const GADS_ID = "AW-18372487007";
 const CONV_FORM = `${GADS_ID}/0EADCMjN2twcEMbT07BE`;
 const CONV_WHATSAPP = `${GADS_ID}/-D_aCMvN2twcEMbT07BE`;
 const CONV_CALL = `${GADS_ID}/M3vZCM7N2twcEMbT07BE`;
