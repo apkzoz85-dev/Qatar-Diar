@@ -133,7 +133,7 @@ const agentJsonLd = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   name: "منصة معلومات وتسجيل مبكر - مشروع علم الروم",
-  telephone: "+201009260259",
+  telephone: "+201117322733",
   url: SITE_URL,
   areaServed: "Egypt",
 };
