@@ -6,21 +6,27 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-const PHONE_INTL = "+201009260259";
-const PHONE_DISPLAY = "0100 926 0259";
-const WA_NUMBER = "201009260259";
+const PHONE_INTL = "+201117322733";
+const PHONE_DISPLAY = "01117322733";
+const WA_NUMBER = "201117322733";
 const WA_MSG = "مرحباً، سجّلت للتو في قائمة علم الروم وأرغب في مزيد من التفاصيل";
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MSG)}`;
 
 export default function ThankYou() {
   return (
     <main className="thanks">
-      {/* ─── TODO: Google Ads conversion (page-view) ───
-          بعد إنشاء الكامبين، فعّل السطر ده بالـ label الحقيقي:
+      {/* ─── Google Ads: Contact / Form conversion (page-view) ─── */}
       <Script id="gads-form-conversion" strategy="afterInteractive">
-        {`window.gtag && gtag('event','conversion',{'send_to':'AW-XXXXXXXXXX/FORM_LABEL'});`}
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18355644870/0EADCMjN2twcEMbT07BE',
+            'value': 1.0,
+            'currency': 'EGP'
+          });
+        `}
       </Script>
-      */}
       <div className="thanks-card">
         <div className="thanks-icon">✓</div>
         <h1>تم تسجيلك في القائمة المبكرة</h1>

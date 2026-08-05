@@ -11,24 +11,40 @@ const WA_MSG = "مرحباً، أرغب في التسجيل المبكر لمش�
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MSG)}`;
 const WEB3_KEY = "1fe5acc9-1e6d-4481-9677-0b9ba8bf8e6e";
 
-/* ─── TRACKING ───
-   TODO بعد إنشاء الكامبين: أضف الـ conversion labels الحقيقية
-   مثال: window.gtag?.("event","conversion",{send_to:"AW-XXXXXXXXXX/LABEL"});
-   ملاحظة: تحويل الفورم الأساسي بيتسجل من صفحة /thank-you (page view conversion)
-*/
+/* ─── GOOGLE ADS TRACKING ─── */
+const GADS_ID = "AW-18355644870";
+const CONV_FORM = `${GADS_ID}/0EADCMjN2twcEMbT07BE`;
+const CONV_WHATSAPP = `${GADS_ID}/-D_aCMvN2twcEMbT07BE`;
+const CONV_CALL = `${GADS_ID}/M3vZCM7N2twcEMbT07BE`;
+
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
   }
 }
+
+function fireConversion(sendTo: string) {
+  try {
+    window.gtag?.("event", "conversion", {
+      send_to: sendTo,
+      value: 1.0,
+      currency: "EGP",
+    });
+  } catch {
+    /* no-op */
+  }
+}
+
+/* تحويل الفورم بيتسجل على صفحة /thank-you (page-view conversion)
+   عشان ميتحسبش مرتين — الدالة دي متسابة للاستخدامات المستقبلية فقط */
 function trackFormLead() {
-  // TODO: window.gtag?.("event", "conversion", { send_to: "AW-XXXXXXXXXX/FORM_LABEL" });
+  // intentionally empty — see app/thank-you/page.tsx
 }
 function trackWhatsApp() {
-  // TODO: window.gtag?.("event", "conversion", { send_to: "AW-XXXXXXXXXX/WA_LABEL" });
+  fireConversion(CONV_WHATSAPP);
 }
 function trackCall() {
-  // TODO: window.gtag?.("event", "conversion", { send_to: "AW-XXXXXXXXXX/CALL_LABEL" });
+  fireConversion(CONV_CALL);
 }
 
 const NAV_LINKS = [
