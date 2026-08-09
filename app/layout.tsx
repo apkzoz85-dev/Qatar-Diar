@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-const SITE_URL = "https://alamelroum-qataridiar.com";
+const SITE_URL = "https://alam-elroum.net";
 
 /* ─── Google Ads ─── */
-export const GADS_ID = "AW-18372487007";
+export const GADS_ID = "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
