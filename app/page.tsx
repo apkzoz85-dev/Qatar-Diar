@@ -77,7 +77,7 @@ const UNITS = [
     img: "/images/lagoon.jpg",
     title: "شاليهات وشقق اللاجون",
     desc: "وحدات مطلة على لاجونات صالحة للسباحة داخل مجتمعات سكنية هادئة.",
-    price: "تبدأ من 15,000,000 جنيه",
+    price: "تبدأ من 15,600,000 جنيه",
     indicative: true,
   },
   {
@@ -103,10 +103,36 @@ const UNITS = [
   },
 ];
 
+/* ─── قائمة أسعار SANDSIDE LAGOONS (استرشادية قبل الإطلاق الرسمي) ─── */
+const PRICE_LIST = [
+  { id: "sl-01", title: "شاليه علوي — غرفتان", bua: "—", land: "—", features: "غرفتان + غرفة مربية", price: "15,600,000" },
+  { id: "sl-02", title: "شاليه أرضي — غرفتان", bua: "—", land: "75 م² حديقة", features: "غرفتان + غرفة مربية", price: "18,800,000" },
+  { id: "sl-03", title: "توين شاليه — علوي", bua: "161 م²", land: "—", features: "4 غرف + غرفة مربية", price: "20,150,000" },
+  { id: "sl-04", title: "توين شاليه — أرضي", bua: "141 م²", land: "200 م² حديقة", features: "3 غرف + غرفة مربية", price: "20,700,000" },
+  { id: "sl-05", title: "توين شاليه — أرضي", bua: "161 م²", land: "200 م² حديقة", features: "4 غرف + غرفة مربية", price: "24,150,000" },
+  { id: "sl-06", title: "تاون هاوس", bua: "144 م²", land: "275 / 200 م²", features: "3 أجنحة", price: "24,300,000" },
+  { id: "sl-07", title: "تاون هاوس", bua: "180 م²", land: "275 / 200 م²", features: "4 أجنحة", price: "30,800,000" },
+  { id: "sl-08", title: "توين هاوس — كريستال لاجون", bua: "204 م²", land: "400 م²", features: "4 أجنحة", price: "35,500,000" },
+  { id: "sl-09", title: "فيلا كريستال لاجون", bua: "230 م²", land: "450 م²", features: "4 أجنحة", price: "35,900,000" },
+  { id: "sl-10", title: "فيلا الصف الثاني — Open Sea Lagoon", bua: "307 م²", land: "500 م²", features: "5 أجنحة، إطلالة جزئية على اللاجون", price: "49,700,000" },
+  { id: "sl-11", title: "فيلا كريستال لاجون", bua: "272 م²", land: "550 م²", features: "5 أجنحة", price: "55,000,000" },
+  { id: "sl-12", title: "فيلا مستقلة — لاجون فرونت", bua: "—", land: "500 م²", features: "5 أجنحة، إطلالة كاملة على اللاجون", price: "78,400,000" },
+];
+
+/* ─── جدية الحجز EOI ─── */
+const EOI_SEALINE = [
+  { rows: "الصف الأول حتى الخامس", amount: "1,000,000 جنيه" },
+  { rows: "الصف السادس حتى التاسع", amount: "500,000 جنيه" },
+];
+const EOI_SANDSIDE = [
+  { type: "ستاند الون · توين هاوس · تاون هاوس", amount: "250,000 جنيه" },
+  { type: "الشاليهات", amount: "100,000 جنيه" },
+];
+
 const FAQS = [
   { q: "أين يقع مشروع علم الروم بالظبط؟", a: "تقع منطقة علم الروم شرق مدينة مرسى مطروح مباشرة على ساحل البحر المتوسط، وسُميت بهذا الاسم نسبة إلى حصن روماني قديم كان قائماً في المنطقة." },
   { q: "من هي الشركة المطورة لمشروع علم الروم؟", a: "المطور هو شركة الديار القطرية، الذراع العقارية لجهاز قطر للاستثمار (الصندوق السيادي القطري)، ولها مشروعات كبرى في أكثر من 20 دولة حول العالم." },
-  { q: "كم أسعار الوحدات في علم الروم؟", a: "الأسعار الاسترشادية المتداولة قبل الإطلاق تبدأ من نحو 15 مليون جنيه، بينما لم تصدر بعد قوائم الأسعار النهائية وأنظمة السداد الرسمية من المطور. سجّل اهتمامك لتصلك القوائم الرسمية فور صدورها." },
+  { q: "كم أسعار الوحدات في علم الروم؟", a: "الأسعار الاسترشادية المتداولة لمرحلة Sandside Lagoons تبدأ من 15.6 مليون جنيه للشاليهات وتصل إلى 78.4 مليون جنيه للفلل المستقلة على اللاجون، مع مبالغ جدية حجز (EOI) تبدأ من 100 ألف جنيه للشاليهات. لم تصدر بعد أنظمة السداد الرسمية من المطور — سجّل اهتمامك لتصلك فور صدورها." },
   { q: "متى تبدأ المرحلة الأولى من المشروع؟", a: "أعلنت الديار القطرية أن أعمال المرحلة الأولى من مشروع علم الروم تبدأ خلال عام 2026، على أن يتم تطوير المشروع على مراحل متتالية." },
   { q: "ما حجم الاستثمارات ومساحة المشروع؟", a: "تبلغ الاستثمارات المعلنة نحو 29.7 مليار دولار على مساحة حوالي 5000 فدان، لتطوير مدينة ساحلية متكاملة تشمل مكونات سكنية وفندقية وسياحية وخدمية." },
   { q: "ما الفرق بين علم الروم ورأس الحكمة؟", a: "كلاهما مشروع مدينة ساحلية متكاملة باستثمارات خليجية ضخمة على الساحل الشمالي الغربي، لكن رأس الحكمة في مرحلة أسبق من البيع والتنفيذ، بينما علم الروم في مرحلة ما قبل الإطلاق - مما قد يمنح المسجّلين مبكراً أفضلية في الأسعار الافتتاحية." },
@@ -259,7 +285,7 @@ export default function Home() {
           </p>
           <div className="hero-status">
             <span className="gold">المرحلة الأولى · 2026</span>
-            <span className="gold">الأسعار تبدأ من 15 مليون جنيه*</span>
+            <span className="gold">الأسعار تبدأ من 15.6 مليون جنيه*</span>
             <span>التسجيل المبكر متاح الآن</span>
           </div>
           <p className="hero-indicative">* أسعار استرشادية متداولة لحين الإعلان الرسمي من المطور</p>
@@ -294,7 +320,7 @@ export default function Home() {
             <div className="facts-col pending">
               <h3>◌ لم يُعلن رسمياً بعد</h3>
               <ul>
-                <li>قوائم الأسعار النهائية وأنظمة السداد التفصيلية (المتداول: تبدأ من 15 مليون جنيه استرشادياً)</li>
+                <li>قوائم الأسعار النهائية وأنظمة السداد التفصيلية (المتداول لمرحلة Sandside Lagoons: تبدأ من 15.6 مليون جنيه استرشادياً)</li>
                 <li>مساحات الوحدات التفصيلية لكل فئة</li>
                 <li>أسماء العلامات الفندقية المشغّلة</li>
                 <li>موعد فتح باب الحجز الرسمي</li>
@@ -385,7 +411,7 @@ export default function Home() {
         <div className="section-inner">
           <div className="animate-in center">
             <span className="eyebrow">الوحدات والأسعار</span>
-            <h2 className="section-title">الأسعار تبدأ من 15 مليون جنيه</h2>
+            <h2 className="section-title">الأسعار تبدأ من 15.6 مليون جنيه</h2>
             <p className="section-desc" style={{ margin: "0 auto" }}>
               أسعار استرشادية متداولة قبل الإطلاق الرسمي — أنظمة السداد والقوائم النهائية
               تصلك أولاً بأول عند تسجيل اهتمامك.
@@ -410,6 +436,61 @@ export default function Home() {
           <p className="section-desc animate-in" style={{ marginTop: 18, fontSize: 13.5, color: "var(--muted)" }}>
             * جميع الأسعار الواردة استرشادية وقابلة للتغيير، والمرجع النهائي هو قوائم الأسعار الرسمية للمطور عند الإطلاق.
           </p>
+
+          {/* SANDSIDE LAGOONS — قائمة الأسعار التفصيلية */}
+          <div className="animate-in center" style={{ marginTop: 56 }} id="pricelist">
+            <span className="eyebrow">SANDSIDE LAGOONS</span>
+            <h2 className="section-title">قائمة أسعار ساند سايد لاجون</h2>
+            <p className="section-desc" style={{ margin: "0 auto" }}>
+              الأسعار المتداولة قبل الإطلاق الرسمي لمرحلة Sandside Lagoons — تبدأ من 15.6 مليون جنيه.
+              اطلب تفاصيل أي وحدة وسيصلك أول تحديث رسمي لأنظمة السداد.
+            </p>
+          </div>
+          <div className="pricelist-grid animate-in">
+            {PRICE_LIST.map((u) => (
+              <div key={u.id} className="price-card">
+                <span className="price-tag">SANDSIDE LAGOONS</span>
+                <h3>{u.title}</h3>
+                <div className="spec-rows">
+                  <div className="spec-row"><span>المساحة المبنية</span><b>{u.bua}</b></div>
+                  <div className="spec-row"><span>مساحة الأرض</span><b>{u.land}</b></div>
+                  <div className="spec-row"><span>المميزات</span><b>{u.features}</b></div>
+                </div>
+                <div className="price-from">
+                  <span>السعر يبدأ من</span>
+                  <b>{u.price} <small>جنيه</small></b>
+                </div>
+                <a className="price-cta" href="#register">استعلم عن الوحدة ↖</a>
+              </div>
+            ))}
+          </div>
+
+          {/* EOI — جدية الحجز */}
+          <div className="animate-in center" style={{ marginTop: 56 }} id="eoi">
+            <span className="eyebrow">EOI · التسجيل المبكر</span>
+            <h2 className="section-title">مبالغ جدية الحجز (EOI)</h2>
+            <p className="section-desc" style={{ margin: "0 auto" }}>
+              الـ EOI (Expression of Interest) هو مبلغ جدية يضمن لك أولوية الاختيار عند فتح باب الحجز
+              الرسمي — الأسبقية في اختيار الوحدة تكون بترتيب التسجيل.
+            </p>
+          </div>
+          <div className="eoi-grid animate-in">
+            <div className="eoi-card">
+              <h3>مرحلة SEA LINE</h3>
+              {EOI_SEALINE.map((e) => (
+                <div className="spec-row" key={e.rows}><span>{e.rows}</span><b>{e.amount}</b></div>
+              ))}
+            </div>
+            <div className="eoi-card">
+              <h3>مرحلة SANDSIDE LAGOON</h3>
+              {EOI_SANDSIDE.map((e) => (
+                <div className="spec-row" key={e.type}><span>{e.type}</span><b>{e.amount}</b></div>
+              ))}
+            </div>
+          </div>
+          <div className="center animate-in" style={{ marginTop: 26 }}>
+            <a className="btn-gold" href="#register">سجّل اهتمامك قبل فتح الحجز</a>
+          </div>
         </div>
       </section>
 
@@ -587,7 +668,9 @@ export default function Home() {
           مدينة ساحلية متكاملة من الديار القطرية شرق مرسى مطروح — 5000 فدان على البحر المتوسط.
         </p>
         <div className="footer-links">
-          <button onClick={() => setShowPrivacy(true)}>سياسة الخصوصية</button>
+          <a href="/about" style={{ color: "var(--turq)" }}>من نحن</a>
+          <a href="/privacy" style={{ color: "var(--turq)" }}>سياسة الخصوصية</a>
+          <a href="/disclaimer" style={{ color: "var(--turq)" }}>إخلاء المسؤولية</a>
           <a href={`tel:${PHONE_INTL}`} onClick={trackCall} style={{ color: "var(--turq)" }}>اتصل بنا: {PHONE_DISPLAY}</a>
           <a href={WA_URL} target="_blank" rel="noopener" onClick={trackWhatsApp} style={{ color: "var(--turq)" }}>واتساب</a>
         </div>
@@ -612,7 +695,7 @@ export default function Home() {
         <div className="popup-overlay" onClick={(e) => e.target === e.currentTarget && closePopup()}>
           <div className="popup" role="dialog" aria-label="التسجيل المبكر">
             <button className="popup-close" aria-label="إغلاق" onClick={closePopup}>×</button>
-            <div className="popup-price">الأسعار تبدأ من <b>15,000,000 جنيه</b></div>
+            <div className="popup-price">الأسعار تبدأ من <b>15,600,000 جنيه</b></div>
             <h2>سجّل قبل فتح باب الحجز الرسمي</h2>
             <p className="form-note">سعر استرشادي قبل الإطلاق — سجّل وخد أفضلية التواصل المبكر بأنظمة السداد فور صدورها</p>
             <form
