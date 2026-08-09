@@ -21,7 +21,7 @@ export default function ThankYou() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('event', 'conversion', {
-            'send_to': 'AW-18355644870/0EADCMjN2twcEMbT07BE',
+            'send_to': 'AW-18355644870/',
             'value': 1.0,
             'currency': 'EGP'
           });
