@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 /* ⚠️ غيّر الدومين هنا لدومينك الفعلي بعد الشراء */
-const SITE_URL = "https://alamelroum-qataridiar.com";
+const SITE_URL = "https://alam-elroum.net";
 
 export const dynamic = "force-static";
 
